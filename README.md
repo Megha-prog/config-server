@@ -1,1 +1,1 @@
-# employee-config-server
+# fellowup-config-server
