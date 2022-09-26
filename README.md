@@ -1,1 +1,1 @@
-# fellowup-config-server
+config-server
