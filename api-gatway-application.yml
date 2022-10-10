@@ -10,7 +10,7 @@ spring:
             exposedHeaders: "*"
       routes:
         - id: user-service
-          uri:lb:USER-SERVICE
+          uri: lb:USER-SERVICE
           predicates:
             - Path=/user/**
           filter:
