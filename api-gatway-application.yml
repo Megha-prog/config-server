@@ -17,11 +17,11 @@ spring:
             - RewritePath=/emp(?<segment>/?.*), $\{segment}
 
         - id: authentication-service
-          uri: lb://AUTH-SERVICE
+          uri: http://localhost:8082
           predicates:
             - Path= /auth/**
           filter:
-            - RewritePath=/authentication(?<segment>/?.*), $\{segment}
+            - RewritePath=/auth(?<segment>/?.*), $\{segment}
             
             
         - id: task-management-service
