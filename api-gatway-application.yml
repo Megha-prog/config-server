@@ -35,6 +35,8 @@ spring:
           uri: http://localhost:8084
           predicates:
             - Path=/email/**
+          filter:
+            - RewritePath=/email(?<segment>/?.*), $\{segment}
 
 
 eureka:
