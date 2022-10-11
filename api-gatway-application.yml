@@ -27,9 +27,9 @@ spring:
 #             - RewritePath=/checker(?<segment>/?.*), $\{segment}
 
         - id: auth-service
-          uri: http://localhost:8082/
+          uri: http://localhost:8082
           predicates:
-            - Path= /auth/**
+            - Path= /authentication/**
           filter:
             - RewritePath=/authentication(?<segment>/?.*), $\{segment}
             
