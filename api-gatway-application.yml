@@ -15,13 +15,6 @@ spring:
             - Path=/user-service/**
           filter:
             - RewritePath=/user-service(?<segment>/?.*), $\{segment}
-        
-#         - id: user-service
-#           uri: http://localhost:8081
-#           predicates:
-#             - Path= /checker/**
-#           filter:
-#             - RewritePath=/checker(?<segment>/?.*), $\{segment}
 
         - id: authentication-service
           uri: http://localhost:8082
@@ -36,7 +29,7 @@ spring:
           predicates:
             - Path=/task/**
           filter:
-            - RewritePath=/taskmgmt(?<segment>/?.*), $\{segment}
+            - RewritePath=/task(?<segment>/?.*), $\{segment}
           
         - id: email-service
           uri: http://localhost:8084
