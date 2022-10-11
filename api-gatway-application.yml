@@ -14,7 +14,7 @@ spring:
           predicates:
             - Path=/emp/**
           filter:
-            - RewritePath=/emp(?<segment>/?.*), $\{segment}
+            - RewritePath=/user(?<segment>/?.*), $\{segment}
         
 #         - id: user-service
 #           uri: http://localhost:8081
