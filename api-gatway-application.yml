@@ -29,9 +29,9 @@ spring:
         - id: authentication
           uri: http://localhost:8082
           predicates:
-            - Path= /auth/**
+            - Path= /authentication/**
           filter:
-            - RewritePath=/auth(?<segment>/?.*), $\{segment}
+            - RewritePath=/authentication(?<segment>/?.*), $\{segment}
             
             
         - id: task-management-service
