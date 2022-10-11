@@ -1,8 +1,8 @@
 spring:
   cloud:
     gateway:
-      default-filters:
-        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+#       default-filters:
+#         - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
        
       globalcors:
         corsConfigurations:
@@ -13,7 +13,7 @@ spring:
             exposedHeaders: "*"
       routes:
         - id: user-service
-          uri: lb:USER-SERVICE
+          uri: lb://USER-SERVICE
           predicates:
             - Path=/emp/**
           filter:
@@ -27,7 +27,7 @@ spring:
 #             - RewritePath=/checker(?<segment>/?.*), $\{segment}
 
         - id: auth-service
-          uri: http://localhost:8082
+          uri: lb://AUTH-SERVICE
           predicates:
             - Path=/authentication/**
           filter:
