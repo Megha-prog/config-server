@@ -37,6 +37,13 @@ spring:
             - Path=/email/**
           filter:
             - RewritePath=/email(?<segment>/?.*), $\{segment}
+         
+        - id: product-webapp
+          uri: http://localhost:8087
+          predicates:
+            - Path=/**
+          filter:
+            - RewritePath=(?<segment>/?.*), $\{segment}
 
 
 eureka:
